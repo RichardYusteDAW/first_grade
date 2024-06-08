@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Detail</title>
+</head>
+
+<body>
+    <p><strong>Título:</strong> <span th:text="${game.title}"></span></p>
+    <p><strong>Año de lanzamiento:</strong> <span th:text="${game.year}"></span></p>
+    <p><strong>Descripción:</strong> <span th:text="${game.description}"></span></p>
+    <p><strong>Director:</strong> <span th:text="${game.director.name}"></span></p>
+    <ul>
+        <li th:each="character : ${game.characterList}" th:text="${character.name}"></li>
+    </ul>
+    <br><br>
+
+    <a th:href="@{/games}">Back to Games</a>
+</body>
+
+</html>

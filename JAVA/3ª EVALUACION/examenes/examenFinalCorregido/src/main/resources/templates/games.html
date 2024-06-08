@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Games</title>
+</head>
+
+<body>
+    <h1>All Games</h1>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/games}">View All Games</a>
+    </nav>
+    <ul>
+        <li th:each="game : ${gameList}">
+            <a th:href="@{/games/{code}(code=${game.code})}" th:text="${game.title}">Game Title</a>
+        </li>
+    </ul>
+
+    <form action="/games" method="post">
+        <button type="submit">Añadir juego</button>
+    </form>
+</body>
+
+</html>

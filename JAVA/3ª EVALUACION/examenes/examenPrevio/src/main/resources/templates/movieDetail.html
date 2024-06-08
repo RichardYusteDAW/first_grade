@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detail</title>
+</head>
+
+<body>
+    <h1 th:text="${movie.title}">Movie Title</h1>
+    <p><strong>Director:</strong> <span th:text="${movie.director.name}">Director Name</span></p>
+    <p><strong>Year:</strong> <span th:text="${movie.year}">Year</span></p>
+    <h2>Actors</h2>
+    <ul>
+        <li th:each="actor : ${movie.actorList}" th:text="${actor.name}">Actor Name</li>
+    </ul>
+    <br><br>
+
+    <fieldset>
+        <legend>Update Movie</legend>
+        <form th:action="@{'/movies/' + ${id}}" th:method="put">
+            <input type="hidden" name="movie-id" th:value="${movie.id}">
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" th:value="${movie.title}" required>
+            <br><br>
+
+            <label for=" directorName">Director:</label>
+            <select name="directorName" id="directorName">
+                <option th:each="director : ${directorList}" th:value="${director.name}" th:text="${director.name}"
+                    th:selected="${director.name == movie.director.name}">
+                </option>
+            </select>
+            <br><br>
+
+            <label for="actorNameList">Actor:</label>
+            <select name="actorNameList" id="actorName" multiple>
+                <option th:each="actor : ${actorList}" th:value="${actor.name}" th:text="${actor.name}"
+                    th:selected="${#lists.contains(movie.actorList, actor)}">
+                </option>
+            </select>
+            <br><br>
+
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" th:value="${movie.year}" required>
+            <br><br>
+
+            <button type="submit">Submit</button>
+            <br><br>
+        </form>
+    </fieldset>
+    <br><br>
+
+    <form th:action="@{'/movies/' + ${id}}" th:method="delete">
+        <input type="hidden" name="movie-id" th:value="${movie.id}">
+        <button type="submit">Delete</button>
+    </form>
+    <br><br>
+
+    <a th:href="@{/movies}">Back to Movies</a>
+</body>
+
+</html>

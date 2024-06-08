@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Movie</title>
+</head>
+
+<body>
+    <h1>Search Movie</h1>
+    <form th:action="@{/movies/search/title}" method="post">
+        <label for="title">By Title:</label>
+        <input type="text" id="title" name="title" required>
+        <button type="submit">Search</button>
+    </form>
+    <br><br>
+
+    <form th:action="@{/movies/search/director}" method="post">
+        <label for="directorName">By Director:</label>
+        <select name="directorName" id="directorName">
+            <option th:each="director : ${directorList}" th:value="${director.name}" th:text="${director.name}">
+            </option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+    <br><br>
+
+    <form th:action="@{/movies/search/actor}" method="post">
+        <label for="actorNameList">By Actor:</label>
+        <select name="actorName" id="actorNamet">
+            <option th:each="actor : ${actorList}" th:value="${actor.name}" th:text="${actor.name}"></option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+    <br><br>
+
+    <form th:action="@{/movies/search/year}" method="post">
+        <label for="year">By Year:</label>
+        <input type="number" id="year" name="year" required>
+        <button type="submit">Search</button>
+    </form>
+    <br><br>
+
+    <nav>
+        <a th:href="@{/movies}">Back to Movies</a>
+    </nav>
+</body>
+
+</html>

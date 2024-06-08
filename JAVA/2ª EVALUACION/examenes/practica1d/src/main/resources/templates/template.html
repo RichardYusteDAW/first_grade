@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+
+<body>
+    <nav th:fragment="nav">
+        <a href="/" class="nav">Novedades</a>
+        <a href="/books" class="nav">Libros</a>
+        <a href="/contact" class="nav">Contacto</a>
+        <a href="/about" class="nav">Acerca de</a>
+        <a href="/books/add" id="addBook">
+            <img src="/icons/addBook.png" alt="Añadir libro">
+        </a>
+    </nav>
+
+    <header>
+        <h1>Bienvenidos a Libros del Saber</h1>
+        <p>Tu librería favorita para descubrir, explorar y comprar libros en línea.</p>
+    </header>
+
+    <footer th:fragment="footer">
+        <p>&copy; 2024 Librería Libros del Saber. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales para obtener las últimas actualizaciones y ofertas.</p>
+    </footer>
+</body>
+
+</html>

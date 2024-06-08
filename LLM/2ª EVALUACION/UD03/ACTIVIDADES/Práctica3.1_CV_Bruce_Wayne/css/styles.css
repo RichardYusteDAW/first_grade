@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    background-image: url(../img/background-city.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, .3);
+    min-height: 100vh;
+    padding: 0.5em 2em;
+}
+
+header {
+    padding: 2em 0;
+    background-color: #bfbfbf;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 2.2em;
+    letter-spacing: .5em;
+    word-spacing: 1em;
+    color: #172052;
+    text-shadow: .1em .1em .2em;
+}
+
+section {
+    margin: 3em 0;
+}
+
+section h2 {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 1.5em;
+    letter-spacing: .5em;
+    color: #58160d;
+    border-bottom: 2px solid #58160d;
+}
+
+h1,
+section h2 {
+    text-transform: uppercase;
+}
+
+section li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
+
+.datos_cv div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.imagen_datos {
+    margin-left: 20%;
+}
+
+.imagen_datos img {
+    width: 15em;
+    /*box-shadow: [horizontal] [vertical] [difuminado] [expansión] [color] [inset];*/
+    box-shadow: .5em .5em .5em 0 #58160d;
+
+}
+
+.texto_datos li {
+    list-style-type: circle;
+}
+
+.formacion li {
+    list-style-image: url(../img/figma.svg);
+}
+
+.experiencia li {
+    list-style-type: square;
+}
+
+footer {
+    background-color: #ccc;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .8em;
+    padding: 2em 0;
+    font-weight: bold;
+}
